@@ -14,21 +14,34 @@ module.exports = {
                 endOfLine: 'auto',
             },
         ],
-        // 'import/extensions': [
-        //     'error',
-        //     'never',
-        //     {
-        //         js: 'never',
-        //         jsx: 'never',
-        //         ts: 'never',
-        //         tsx: 'never',
-        //     },
-        // ],
+        'import/extensions': [
+            0,
+            'ignorePackages',
+            {
+                js: 'never',
+                mjs: 'never',
+                jsx: 'never',
+                ts: 'never',
+                tsx: 'never',
+            },
+        ],
         '@typescript-eslint/explicit-function-return-type': 'off',
-        // '@typescript-eslint/no-unused-vars': 'off',
+        'no-underscore-dangle': ['error', { allow: ['__typename'] }],
+        '@typescript-eslint/no-unused-vars': [1, { args: 'none' }],
         'react/jsx-filename-extension': [
             1,
             { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
         ],
+    },
+    settings: {
+        'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+        'import/parsers': {
+            '@typescript-eslint/parser': ['.ts', '.tsx'],
+        },
+        'import/resolver': {
+            node: {
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            },
+        },
     },
 };
