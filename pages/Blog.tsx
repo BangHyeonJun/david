@@ -32,17 +32,15 @@ const fadeInUp = {
 
 function blog() {
     return (
-        <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
-            <Layout>
-                <motion.div
-                    animate={{ x: 60, opacity: 1 }}
-                    initial={{ x: 0, opacity: 0 }}
-                    className="title"
-                >
-                    <h1>블로그</h1>
-                </motion.div>
-            </Layout>
-        </motion.div>
+        <Layout>
+            <motion.div
+                animate={{ x: 60, opacity: 1 }}
+                initial={{ x: 0, opacity: 0 }}
+                className="title"
+            >
+                <h1>블로그</h1>
+            </motion.div>
+        </Layout>
     );
 }
 

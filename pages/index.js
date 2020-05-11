@@ -49,20 +49,18 @@ const stagger = {
 
 function Index() {
     return (
-        <motion.div initial="initial" animate="animate" exit={{ opacity: 0 }}>
-            <Layout>
-                <motion.div
-                    animate={{ x: 60, opacity: 1 }}
-                    initial={{ x: 0, opacity: 0 }}
-                    className="title"
-                >
-                    <h1>Friends List</h1>
-                </motion.div>
-                {/* <ProfileLink name="jake" />
+        <Layout>
+            <motion.div
+                animate={{ x: 60, opacity: 1 }}
+                initial={{ x: 0, opacity: 0 }}
+                className="title"
+            >
+                <h1>Friends List</h1>
+            </motion.div>
+            {/* <ProfileLink name="jake" />
             <ProfileLink name="peter" />
             <ProfileLink name="yumi" /> */}
-            </Layout>
-        </motion.div>
+        </Layout>
     );
 }
 
