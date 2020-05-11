@@ -10,13 +10,21 @@ import NextButton from './SideButton/NextButton';
 import styles from './Layout.module.scss';
 const cx = classNames.bind(styles);
 
-const Layout = props => (
-    <div className={cx('wrap')}>
-        <Header />
-        <PrevButton></PrevButton>
-        {props.children}
-        <NextButton></NextButton>
-    </div>
-);
+type LayoutProps = {
+    children: React.ReactNode;
+    prevLink: string;
+    nextLink: string;
+};
+
+function Layout({ children, prevLink, nextLink }: LayoutProps) {
+    return (
+        <div className={cx('wrap')}>
+            <Header />
+            <PrevButton href={prevLink}></PrevButton>
+            {children}
+            <NextButton href={nextLink}></NextButton>
+        </div>
+    );
+}
 
 export default Layout;

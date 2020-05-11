@@ -49,7 +49,7 @@ const stagger = {
 
 function Index() {
     return (
-        <Layout>
+        <Layout prevLink={'/'} nextLink={'/blog'}>
             <motion.div
                 animate={{ x: 60, opacity: 1 }}
                 initial={{ x: 0, opacity: 0 }}
