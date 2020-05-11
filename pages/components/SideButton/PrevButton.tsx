@@ -1,0 +1,18 @@
+import React from 'react';
+
+// 스타일
+import classNames from 'classnames/bind';
+import styles from './PrevButton.module.scss';
+const cx = classNames.bind(styles);
+
+function PrevButton() {
+    return (
+        <div className={cx('wrap')}>
+            <button className={cx('arrowBtnBox')}>
+                <img src={'/img/prev-button.svg'}></img>
+            </button>
+        </div>
+    );
+}
+
+export default PrevButton;
