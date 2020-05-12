@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './Header/Header';
 import classNames from 'classnames/bind';
 
 // 컴포넌트
@@ -19,7 +18,6 @@ type LayoutProps = {
 function Layout({ children, prevLink, nextLink }: LayoutProps) {
     return (
         <div className={cx('wrap')}>
-            <Header />
             <PrevButton href={prevLink}></PrevButton>
             {children}
             <NextButton href={nextLink}></NextButton>
