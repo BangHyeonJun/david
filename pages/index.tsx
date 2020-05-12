@@ -13,6 +13,8 @@ import { motion } from 'framer-motion';
 function Index() {
     return (
         <Layout prevLink={'/'} nextLink={'/blog'}>
+            <div className={cx('bgBox1')}></div>
+            <div className={cx('bgBox2')}></div>
             <motion.div
                 animate={{ x: 0, opacity: 1 }}
                 initial={{ x: 60, opacity: 0 }}

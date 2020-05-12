@@ -3,16 +3,16 @@ $box-color: rgba(#ee7785, 1);
 .bgBox1 {
     background-color: $box-color;
     width: 60px;
-    height: 200px;
+    height: 30%;
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     left: 10%;
 }
 
 .bgBox2 {
     background-color: $box-color;
-    width: 600px;
-    height: 300px;
+    width: 36%;
+    height: 26%;
     position: absolute;
     bottom: 50%;
     right: 0px;
