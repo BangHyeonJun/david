@@ -13,14 +13,18 @@ import { motion } from 'framer-motion';
 function Index() {
     return (
         <Layout prevLink={'/'} nextLink={'/blog'}>
-            <div className={cx('bgBox1')}></div>
-            <div className={cx('bgBox2')}></div>
             <motion.div
-                animate={{ x: 0, opacity: 1 }}
-                initial={{ x: 60, opacity: 0 }}
+                animate={{ opacity: 1, backgroundColor: '#84B1ED' }}
+                initial={{ opacity: 1, backgroundColor: '#000000' }}
                 className={cx('wrap')}
             >
-                <h1>내 소개</h1>
+                <motion.div
+                    animate={{ x: 0, opacity: 1 }}
+                    initial={{ x: 60, opacity: 0 }}
+                    className={cx('cardWrap')}
+                >
+                    <h1>내 소개</h1>
+                </motion.div>
             </motion.div>
         </Layout>
     );
