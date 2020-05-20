@@ -18,8 +18,10 @@ type LayoutProps = {
 function Layout({ children, prevLink, nextLink }: LayoutProps) {
     return (
         <div className={cx('wrap')}>
+            {/* TODO : 맨 끝 이상으로 가면 더이상 가지지 않게 수정 */}
             <PrevButton href={prevLink}></PrevButton>
             {children}
+            {/* TODO : 맨 끝 이상으로 가면 더이상 가지지 않게 수정 해야함 */}
             <NextButton href={nextLink}></NextButton>
         </div>
     );
