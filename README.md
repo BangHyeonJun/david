@@ -5,7 +5,8 @@
 -   레이아웃 다시 생각해 보기
 -   가로형? / 세로형?
 
-
+-   그냥 가로형으로 하자
 
 # 참고
-- https://dribbble.com/shots/2584926-No-scroll-responsive-webdesign
+
+-   https://dribbble.com/shots/2584926-No-scroll-responsive-webdesign
