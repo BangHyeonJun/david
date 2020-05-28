@@ -5,6 +5,7 @@ export type SideBarState = {
     id: string; // 메뉴 아이디
     name: string; // 사용자에게 보여질 메뉴 이름
     active: boolean; // 현재 active 상태
+    url: string;
 };
 
 /* 사이드 바 메뉴들이 들어갈 리스트 */
@@ -55,11 +56,13 @@ export function SideBarsContextProvider({
             id: 'home',
             name: 'HOME',
             active: true,
+            url: '/home',
         },
         {
             id: 'about',
             name: 'ABOUT',
             active: false,
+            url: '/about',
         },
     ]);
 
