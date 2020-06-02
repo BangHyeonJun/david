@@ -1,0 +1,23 @@
+.wrap {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: #a593e0;
+    clip-path: polygon(0 0, 84% 0, 100% 100%, 0% 100%);
+    display: flex;
+    flex-direction: column;
+
+    > span {
+        width: 100%;
+        height: 40px;
+
+        &:hover {
+            background-color: #fff;
+        }
+    }
+}

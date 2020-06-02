@@ -5,4 +5,14 @@
     flex-direction: row;
     align-items: center;
     position: relative;
+    background-color: #fffff3;
+}
+
+.sidebar-wrap {
+    width: 300px;
+    height: 100%;
+}
+.contents-wrap {
+    width: calc(100% - 300px);
+    height: 100%;
 }

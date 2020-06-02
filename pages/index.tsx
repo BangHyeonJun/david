@@ -13,7 +13,7 @@ import { motion } from 'framer-motion';
 function Index() {
     return (
         <Layout prevLink={'/'} nextLink={'/blog'}>
-            <motion.div
+            {/* <motion.div
                 animate={{ opacity: 1, backgroundColor: '#84B1ED' }}
                 initial={{ opacity: 1, backgroundColor: '#000000' }}
                 className={cx('wrap')}
@@ -25,7 +25,7 @@ function Index() {
                 >
                     <h1>내 소개</h1>
                 </motion.div>
-            </motion.div>
+            </motion.div> */}
         </Layout>
     );
 }
