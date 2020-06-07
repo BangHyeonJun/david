@@ -1,8 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-// 로고
-// import Logo from '../../../public/img/logo.png';
+// className={cx("title")} 아이콘
 
 // 컨텍스트
 import { useSideBarsState } from '../../contexts/SideBarContext';
@@ -11,8 +10,6 @@ import { useSideBarsState } from '../../contexts/SideBarContext';
 import classNames from 'classnames/bind';
 import styles from './SideBar.module.scss';
 const cx = classNames.bind(styles);
-
-import { motion } from 'framer-motion';
 
 function SideBar() {
     const SideBarsState = useSideBarsState();
@@ -32,8 +29,25 @@ function SideBar() {
 
                 {/* 메뉴 */}
                 <div className={cx('menu-box')}>
-                    <div>
-                        <div>아이콘</div>
+                    <div className={cx('menu-item', 'active')}>
+                        <div className={cx('icon', 'home')}></div>
+                        <span className={cx('title')}>HOME</span>
+                    </div>
+                    <div className={cx('menu-item')}>
+                        <div className={cx('icon', 'about')}></div>
+                        <span className={cx('title')}>ABOUT</span>
+                    </div>
+                    <div className={cx('menu-item')}>
+                        <div className={cx('icon', 'history')}></div>
+                        <span className={cx('title')}>HISTORY</span>
+                    </div>
+                    <div className={cx('menu-item')}>
+                        <div className={cx('icon', 'blog')}></div>
+                        <span className={cx('title')}>BLOG</span>
+                    </div>
+                    <div className={cx('menu-item')}>
+                        <div className={cx('icon', 'contact')}></div>
+                        <span className={cx('title')}>CONTACT</span>
                     </div>
                 </div>
 
