@@ -1,24 +1,138 @@
 .wrap {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
-}
-
-.container {
-    width: 100%;
-    height: 100%;
-    // background: #a593e0;
-    clip-path: polygon(0 0, 84% 0, 100% 100%, 0% 100%);
+    // filter: drop-shadow(7px 1px 2px rgba(50, 50, 0, 0.5));
     display: flex;
     flex-direction: column;
+}
 
-    > span {
+/* 사이드 바 컨테이너 */
+.side-container {
+    width: 100%;
+    height: 100%;
+    background-color: #181818;
+
+    /*로고 박스*/
+    .logo-box {
         width: 100%;
-        height: 40px;
-        background: #cfcfcf;
+        height: 100px;
+        background-color: #070707;
+        position: relative;
+        z-index: 99999;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: all 170ms ease-in-out;
+            clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 0% 100%);
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
 
         &:hover {
-            background-color: #000;
+            &::after {
+                background-color: #263959;
+                clip-path: polygon(100% 100%, 100% 0%, 0% 0%, 0% 100%);
+                opacity: 0.8;
+            }
+        }
+
+        .logo {
+            width: 100%;
+            height: 72%;
+            background-image: url('../../../public/img/logo.png');
+            background-size: 62px 62px;
+            background-repeat: no-repeat;
+            background-position: 50% 100%;
+        }
+
+        .logo-title {
+            color: #dfdfdf;
+            height: calc(100% - 72%);
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            font-family: 'Ubuntu';
+            font-weight: bold;
+            font-size: 12px;
         }
     }
+
+    /*메뉴 박스*/
+    .menu-box {
+        width: 100%;
+        height: calc(100% - 300px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*sns 박스*/
+    .sns-box {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
+
+// .side-container {
+//     width: 100%;
+//     height: 100%;
+//     background: rgba($color: #f8a5c2, $alpha: 1);
+//     top: 0;
+//     left: 0;
+
+//     .side-item {
+//         width: 100%;
+//         height: 50px;
+//         position: relative;
+//         display: flex;
+//         align-items: center;
+//         user-select: none;
+//         cursor: pointer;
+
+//         > span {
+//             font-family: 'Fredoka One';
+//             font-weight: 400;
+//             font-style: normal;
+//             font-size: 20px;
+//             color: #fff;
+//             z-index: 9999;
+//             transition: all 170ms ease-in-out;
+//         }
+
+//         &::after {
+//             content: '';
+//             width: 100%;
+//             height: 100%;
+//             box-shadow: 1px 1px 0px 1px rgba(#000, 1);
+//             clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0% 100%);
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             transition: all 250ms ease-in-out;
+//             z-index: 999;
+//             opacity: 0;
+//         }
+
+//         &:hover {
+//             span {
+//             }
+
+//             &::after {
+//                 width: 100%;
+//                 background-color: #303952;
+//                 opacity: 1;
+//                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+//             }
+//         }
+//     }
+// }

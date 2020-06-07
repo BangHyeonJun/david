@@ -9,9 +9,9 @@ import './styles/global.scss';
 // https://www.youtube.com/watch?v=zIDpZi-36Qs
 function App({ Component, pageProps }: AppProps) {
     return (
-        <AnimatePresence exitBeforeEnter>
-            <Component {...pageProps} />
-        </AnimatePresence>
+        // <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} />
+        // </AnimatePresence>
     );
 }
 
