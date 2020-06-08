@@ -7,7 +7,7 @@ import {
     useSideBarsDispatch,
     useSideBarsState,
 } from '../../../../contexts/SideBarContext';
-// import { useSnsState } from '../../../../contexts/SnsContext';
+import { useSnsState } from '../../../../contexts/SnsContext';
 
 // 스타일
 import classNames from 'classnames/bind';
