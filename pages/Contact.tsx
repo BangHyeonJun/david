@@ -4,7 +4,7 @@ import Layout from './components/Layout/Layout';
 
 import { motion } from 'framer-motion';
 
-function Contact() {
+function contact() {
     return (
         <Layout title={'CONTACT'}>
             <div>컨택트</div>
@@ -25,4 +25,4 @@ function Contact() {
     );
 }
 
-export default Contact;
+export default contact;

@@ -2,14 +2,14 @@ import React from 'react';
 
 // 스타일
 import classNames from 'classnames/bind';
-// import styles from './About.module.scss';
+// import styles from './about.module.scss';
 // const cx = classNames.bind(styles);
 
 import Layout from './components/Layout/Layout';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
-function About() {
+function about() {
     const pageVariants = {
         initial: {
             // opacity: 0,
@@ -57,4 +57,4 @@ function About() {
     );
 }
 
-export default About;
+export default about;

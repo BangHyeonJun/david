@@ -4,7 +4,7 @@ import Layout from './components/Layout/Layout';
 
 import { motion } from 'framer-motion';
 
-function History() {
+function history() {
     return (
         <Layout title={'HISTORY'}>
             <div>히스토리</div>
@@ -25,4 +25,4 @@ function History() {
     );
 }
 
-export default History;
+export default history;

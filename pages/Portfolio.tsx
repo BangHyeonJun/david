@@ -4,7 +4,7 @@ import Layout from './components/Layout/Layout';
 
 import { motion } from 'framer-motion';
 
-function Portfolio() {
+function portfolio() {
     return (
         <Layout title={'PORTFOLIO'}>
             <div>포트폴리오</div>
@@ -25,4 +25,4 @@ function Portfolio() {
     );
 }
 
-export default Portfolio;
+export default portfolio;

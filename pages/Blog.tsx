@@ -4,7 +4,7 @@ import Layout from './components/Layout/Layout';
 
 import { motion } from 'framer-motion';
 
-function Blog() {
+function blog() {
     return (
         <Layout title={'BLOG'}>
             <div>블로그 </div>
@@ -25,4 +25,4 @@ function Blog() {
     );
 }
 
-export default Blog;
+export default blog;
