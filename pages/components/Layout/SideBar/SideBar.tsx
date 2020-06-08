@@ -6,8 +6,8 @@ import { useRouter } from 'next/router';
 import {
     useSideBarsDispatch,
     useSideBarsState,
-} from '../../../contexts/SideBarContext';
-import { useSnsState } from '../../../contexts/SnsContext';
+} from '../../../../contexts/SideBarContext';
+// import { useSnsState } from '../../../../contexts/SnsContext';
 
 // 스타일
 import classNames from 'classnames/bind';
@@ -25,7 +25,7 @@ type menuType = {
 
 function SideBar() {
     const SideBarsState = useSideBarsState();
-    const snsState = useSnsState();
+    // const snsState = useSnsState();
     const setSideBarsDispatch = useSideBarsDispatch();
     const router = useRouter();
 
@@ -78,7 +78,7 @@ function SideBar() {
 
                 {/* 컨텍트 */}
                 <div className={cx('sns-box')}>
-                    {snsState.map(sns => (
+                    {/* {snsState.map(sns => (
                         <Link key={sns.id} href={sns.href}>
                             <a target="_blank">
                                 <div className={cx('sns-item')}>
@@ -91,7 +91,7 @@ function SideBar() {
                                 </div>
                             </a>
                         </Link>
-                    ))}
+                    ))} */}
                 </div>
             </div>
         </div>
