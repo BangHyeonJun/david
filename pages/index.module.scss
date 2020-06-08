@@ -3,5 +3,53 @@ $box-color: rgba(#ee7785, 1);
 .wrap {
     width: 100%;
     height: 100%;
-    background-color: #ff2545;
+    display: flex;
+}
+
+.introduce-wrap {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 60px;
+    box-sizing: border-box;
+}
+
+.introduce-main {
+    font-family: 'ubuntu';
+    font-weight: bold;
+    font-size: 64px;
+    color: #ffffff;
+
+    .text-wrap {
+        height: 102px;
+        overflow: hidden;
+        display: flex;
+
+        .parisienne {
+            font-family: 'parisienne';
+            color: #ffffff;
+        }
+
+        .david {
+            background: linear-gradient(to right, #0afdd8, #0afdd8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+        }
+    }
+}
+
+.introduce-sub {
+}
+
+.picture-wrap {
+    width: 40%;
+    height: 100%;
+
+    .mainIMG {
+        clip-path: circle(84.3% at 100% 50%);
+        filter: opacity(0.4);
+    }
 }

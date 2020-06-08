@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 
 // 컴포넌트
 import Layout from './components/Layout/Layout';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, transform } from 'framer-motion';
 
 const icon = {
     hidden: {
@@ -58,22 +58,260 @@ function Index() {
 
     return (
         <Layout title={'HOME'}>
-            <div>테스트</div>
-            {/* <motion.div
-                initial="initial"
-                animate="in"
-                exit="out"
-                variants={pageVariants}
-                className={cx('wrap')}
-            > */}
-            {/* <motion.div
-                            animate={{ x: 0, opacity: 1 }}
-                            initial={{ x: 60, opacity: 0 }}
-                            className={cx('cardWrap')}
-                        >
-                            <h1>내 소개</h1>
-                        </motion.div> */}
-            {/* </motion.div> */}
+            <div className={cx('wrap')}>
+                <div className={cx('introduce-wrap')}>
+                    <div className={cx('introduce-main')}>
+                        <div className={cx('text-wrap')}>
+                            <motion.div
+                                initial={{
+                                    transform: 'translate(0px, -102px)',
+                                }}
+                                animate={{
+                                    transform: [
+                                        'translate(0px, -102px)',
+                                        'translate(0px, 14px)',
+                                        'translate(0px, 0px)',
+                                    ],
+                                }}
+                                transition={{
+                                    duration: 1,
+                                    delay: 0.1,
+                                    ease: 'circIn',
+                                }}
+                            >
+                                <span>Hello</span>
+                            </motion.div>
+                        </div>
+                        <div className={cx('text-wrap')}>
+                            <motion.div
+                                initial={{
+                                    transform: 'translate(0px, -102px)',
+                                }}
+                                animate={{
+                                    transform: [
+                                        'translate(0px, -102px)',
+                                        'translate(0px, 13px)',
+                                        'translate(0px, 0px)',
+                                    ],
+                                }}
+                                transition={{
+                                    delay: 0.4,
+                                    duration: 1,
+                                    stiffness: 260,
+                                    damping: 20,
+                                    ease: 'circIn',
+                                }}
+                            >
+                                <span>My N</span>
+                            </motion.div>
+                            <motion.div
+                                initial={{
+                                    transform: 'translate(0px, -102px)',
+                                }}
+                                animate={{
+                                    transform: [
+                                        'translate(0px, -102px)',
+                                        'translate(0px, 14px)',
+                                        'translate(0px, 0px)',
+                                    ],
+                                }}
+                                transition={{
+                                    delay: 0.2,
+                                    duration: 1,
+                                    stiffness: 260,
+                                    damping: 20,
+                                    ease: 'circIn',
+                                }}
+                            >
+                                <span>ame i</span>
+                            </motion.div>
+                            <motion.div
+                                initial={{
+                                    transform: 'translate(0px, -102px)',
+                                }}
+                                animate={{
+                                    transform: [
+                                        'translate(0px, -102px)',
+                                        'translate(0px, 10px)',
+                                        'translate(0px, 0px)',
+                                    ],
+                                }}
+                                transition={{
+                                    delay: 0.1,
+                                    duration: 1,
+                                    stiffness: 260,
+                                    damping: 20,
+                                    ease: 'circIn',
+                                }}
+                            >
+                                <span>s&nbsp;</span>
+                            </motion.div>
+                            <motion.div
+                                initial={{
+                                    transform: 'translate(0px, -102px)',
+                                }}
+                                animate={{
+                                    transform: [
+                                        'translate(0px, -102px)',
+                                        'translate(0px, -80px)',
+                                        'translate(0px, 15px)',
+                                        'translate(0px, 0px)',
+                                    ],
+                                }}
+                                transition={{
+                                    delay: 0.4,
+                                    duration: 1,
+                                    stiffness: 260,
+                                    damping: 20,
+                                    ease: 'circIn',
+                                }}
+                                whileHover={{
+                                    transform: [
+                                        'scale(1) rotateZ(0deg)',
+                                        'scale(1.2) rotateZ(0deg)',
+                                        'scale(1.2) rotateZ(-5deg)',
+                                        'scale(1.2) rotateZ(5deg)',
+                                        'scale(1.2) rotateZ(-5deg)',
+                                        'scale(1.2) rotateZ(5deg)',
+                                        'scale(1.2) rotateZ(-5deg)',
+                                        'scale(1.2) rotateZ(5deg)',
+                                        'scale(1.2) rotateZ(-5deg)',
+                                        'scale(1.2) rotateZ(5deg)',
+                                        'scale(1.2) rotateZ(0deg)',
+                                        'scale(1) rotateZ(0deg)',
+                                    ],
+                                    transition: {
+                                        loop: 'Infinity',
+                                        duration: 0.7,
+                                        repeatDelay: 1,
+                                    },
+                                }}
+                            >
+                                <Link href={'/about'}>
+                                    <span className={cx('parisienne', 'david')}>
+                                        David
+                                    </span>
+                                </Link>
+                            </motion.div>
+                        </div>
+                        <div className={cx('text-wrap')}>
+                            <motion.div
+                                initial={{
+                                    transform: 'translate(0px, -102px)',
+                                }}
+                                animate={{
+                                    transform: [
+                                        'translate(0px, -102px)',
+                                        'translate(0px, 11px)',
+                                        'translate(0px, 0px)',
+                                    ],
+                                }}
+                                transition={{
+                                    delay: 0.3,
+                                    duration: 1,
+                                    stiffness: 260,
+                                    damping: 20,
+                                    ease: 'circIn',
+                                }}
+                            >
+                                <span>I'</span>
+                            </motion.div>
+                            <motion.div
+                                initial={{
+                                    transform: 'translate(0px, -102px)',
+                                }}
+                                animate={{
+                                    transform: [
+                                        'translate(0px, -102px)',
+                                        'translate(0px, 12px)',
+                                        'translate(0px, 0px)',
+                                    ],
+                                }}
+                                transition={{
+                                    delay: 0.1,
+                                    duration: 1,
+                                    stiffness: 260,
+                                    damping: 20,
+                                    ease: 'circIn',
+                                }}
+                            >
+                                <span>m&nbsp;</span>
+                            </motion.div>
+                            <motion.div
+                                initial={{
+                                    transform: 'translate(0px, -102px)',
+                                }}
+                                animate={{
+                                    transform: [
+                                        'translate(0px, -102px)',
+                                        'translate(0px, 14px)',
+                                        'translate(0px, 0px)',
+                                    ],
+                                }}
+                                transition={{
+                                    delay: 0.4,
+                                    duration: 1,
+                                    stiffness: 260,
+                                    damping: 20,
+                                    ease: 'circIn',
+                                }}
+                            >
+                                <span>a Web&nbsp;</span>
+                            </motion.div>
+                            <motion.div
+                                initial={{
+                                    transform: 'translate(0px, -102px)',
+                                }}
+                                animate={{
+                                    transform: [
+                                        'translate(0px, -102px)',
+                                        'translate(0px, 10px)',
+                                        'translate(0px, 0px)',
+                                    ],
+                                }}
+                                transition={{
+                                    delay: 0.2,
+                                    duration: 1,
+                                    stiffness: 260,
+                                    damping: 20,
+                                    ease: 'circIn',
+                                }}
+                            >
+                                <span>developer</span>
+                            </motion.div>
+                        </div>
+                    </div>
+                    <div className={cx('introduce-sub')}>
+                        <div>
+                            <span>Frontend Developer</span>
+                        </div>
+                        <div>
+                            <span>Backend Developer</span>
+                        </div>
+                    </div>
+                </div>
+                <motion.div
+                    initial={{
+                        clipPath: 'circle(0% at 100% 50%)',
+                        filter: 'opacity(1)',
+                    }}
+                    animate={{
+                        clipPath: 'circle(84.3% at 100% 50%)',
+                        filter: 'opacity(0.4)',
+                    }}
+                    transition={{
+                        type: 'spring',
+                        stiffness: 260,
+                        damping: 20,
+                    }}
+                    className={cx('picture-wrap')}
+                >
+                    <img
+                        src={'img/home/main.png'}
+                        className={cx('mainIMG')}
+                    ></img>
+                </motion.div>
+            </div>
         </Layout>
     );
 }

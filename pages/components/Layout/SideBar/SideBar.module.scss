@@ -82,7 +82,7 @@
 
             .title {
                 transform: rotate3d(0, 1, 0, 90deg);
-                transition: all 250ms ease-in-out;
+                transition: transform 250ms ease-in-out;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -100,7 +100,7 @@
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
                 transform: rotate3d(0, 1, 0, 0deg);
-                transition: all 250ms ease-in-out;
+                transition: transform 250ms ease-in-out;
                 position: absolute;
             }
 
@@ -185,7 +185,7 @@
 
             .title {
                 transform: rotate3d(0, 1, 0, 90deg);
-                transition: all 250ms ease-in-out;
+                transition: transform 250ms ease-in-out;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -204,7 +204,7 @@
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
                 transform: rotate3d(0, 1, 0, 0deg);
-                transition: all 250ms ease-in-out;
+                transition: transform 250ms ease-in-out;
                 position: absolute;
             }
 
@@ -235,57 +235,3 @@
         }
     }
 }
-
-// .side-container {
-//     width: 100%;
-//     height: 100%;
-//     background: rgba($color: #f8a5c2, $alpha: 1);
-//     top: 0;
-//     left: 0;
-
-//     .side-item {
-//         width: 100%;
-//         height: 50px;
-//         position: relative;
-//         display: flex;
-//         align-items: center;
-//         user-select: none;
-//         cursor: pointer;
-
-//         > span {
-//             font-family: 'Fredoka One';
-//             font-weight: 400;
-//             font-style: normal;
-//             font-size: 20px;
-//             color: #fff;
-//             z-index: 9999;
-//             transition: all 170ms ease-in-out;
-//         }
-
-//         &::after {
-//             content: '';
-//             width: 100%;
-//             height: 100%;
-//             box-shadow: 1px 1px 0px 1px rgba(#000, 1);
-//             clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0% 100%);
-//             position: absolute;
-//             top: 0;
-//             left: 0;
-//             transition: all 250ms ease-in-out;
-//             z-index: 999;
-//             opacity: 0;
-//         }
-
-//         &:hover {
-//             span {
-//             }
-
-//             &::after {
-//                 width: 100%;
-//                 background-color: #303952;
-//                 opacity: 1;
-//                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-//             }
-//         }
-//     }
-// }
