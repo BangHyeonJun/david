@@ -59,6 +59,7 @@ export function SideBarsContextProvider({
 }: {
     children: React.ReactNode;
 }) {
+    // TODO : url 대문자 제거해줘야 함 왜 다른 페이지는 대문자를 써야하지?
     const [SideBars, dispatch] = useReducer(SideBarsReducer, [
         {
             id: 'home',

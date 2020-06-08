@@ -187,7 +187,7 @@ function Index() {
                                     },
                                 }}
                             >
-                                <Link href={'/about'}>
+                                <Link href={'/About'}>
                                     <span className={cx('parisienne', 'david')}>
                                         David
                                     </span>
