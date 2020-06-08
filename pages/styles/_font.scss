@@ -1,24 +1,18 @@
 @font-face {
     font-family: 'parisienne';
     font-weight: bold;
-    src: url('../../public/font/Parisienne-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'bellota';
-    font-weight: bold;
-    src: url('../../public/font/Bellota-Bold.eot'); /* IE9 Compat Modes */
-    src: url('../../public/font/Bellota-Bold.eot?#iefix')
+    src: url('../../public/font/Parisienne-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../../public/font/Parisienne-Regular.eot?#iefix')
             format('embedded-opentype'),
-        /* IE6-IE8 */ url('../../public/font/Bellota-Bold.otf')
+        /* IE6-IE8 */ url('../../public/font/Parisienne-Regular.otf')
             format('opentype'),
-        /* Open Type Font */ url('../../public/font/Bellota-Bold.svg')
+        /* Open Type Font */ url('../../public/font/Parisienne-Regular.svg')
             format('svg'),
-        /* Legacy iOS */ url('../../public/font/Bellota-Bold.ttf')
+        /* Legacy iOS */ url('../../public/font/Parisienne-Regular.ttf')
             format('truetype'),
-        /* Safari, Android, iOS */ url('../../public/font/Bellota-Bold.woff')
-            format('woff'),
-        /* Modern Browsers */ url('../../public/font/Bellota-Bold.woff2')
+        /* Safari, Android, iOS */
+            url('../../public/font/Parisienne-Regular.woff') format('woff'),
+        /* Modern Browsers */ url('../../public/font/Parisienne-Regular.woff2')
             format('woff2'); /* Modern Browsers */
 }
 
