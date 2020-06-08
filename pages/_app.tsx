@@ -12,11 +12,9 @@ import { SideBarsContextProvider } from './contexts/SideBarContext';
 // https://www.youtube.com/watch?v=zIDpZi-36Qs
 function App({ Component, pageProps }: AppProps) {
     return (
-        <AnimatePresence>
-            <SideBarsContextProvider>
-                <Component {...pageProps} />
-            </SideBarsContextProvider>
-        </AnimatePresence>
+        <SideBarsContextProvider>
+            <Component {...pageProps} />
+        </SideBarsContextProvider>
     );
 }
 

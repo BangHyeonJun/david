@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 
 import { motion, AnimatePresence } from 'framer-motion';
@@ -20,6 +20,13 @@ type LayoutProps = {
 
 function Layout({ children }: LayoutProps) {
     const sideBarsState = useSideBarsState();
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsVisible(false);
+        }, 3000);
+    }, []);
 
     const pageVariants = {
         initial: {
@@ -34,14 +41,15 @@ function Layout({ children }: LayoutProps) {
             transform: `rotateY(0deg)`,
             perspectiveOrigin: 'center',
             perspective: '0px',
-            transition: { duration: 2 },
+            transition: { duration: 1 },
+            backgroundColor: '#ff1535',
         },
         out: {
             opacity: 0,
             transform: `rotateY(360deg)`,
             perspectiveOrigin: 'center',
             perspective: '300px',
-            transition: { duration: 2 },
+            transition: { duration: 1 },
             // transition: { duration: 2 },
         },
     };
@@ -54,17 +62,19 @@ function Layout({ children }: LayoutProps) {
                 <div className={cx('sidebar-wrap')}>
                     <SideBar></SideBar>
                 </div>
-
-                <motion.div
-                    initial="initial"
-                    animate="in"
-                    exit="out"
-                    variants={pageVariants}
-                    className={cx('contents-wrap')}
-                >
-                    {children}
-                </motion.div>
-
+                <AnimatePresence>
+                    {isVisible && (
+                        <motion.div
+                            initial="initial"
+                            animate="in"
+                            exit="out"
+                            variants={pageVariants}
+                            className={cx('contents-wrap')}
+                        >
+                            {children}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
                 {/* <div className={cx('contents-wrap')}></div> */}
                 {/* TODO : 맨 끝 이상으로 가면 더이상 가지지 않게 수정 해야함 */}
                 {/* <NextButton href={nextLink}></NextButton> */}
