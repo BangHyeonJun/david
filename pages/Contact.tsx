@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 function Contact() {
     return (
-        <Layout>
+        <Layout title={'CONTACT'}>
             <div>컨택트</div>
             {/* <motion.div
                 animate={{ opacity: 1, backgroundColor: '#84B1ED' }}

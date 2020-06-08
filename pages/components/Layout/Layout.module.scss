@@ -1,3 +1,4 @@
+/* 전체를 감싸는 부분 */
 .wrap {
     width: 100%;
     height: 100%;
@@ -8,11 +9,35 @@
     background-color: #1d1d1d;
 }
 
+/* 사이드 바 부분 */
 .sidebar-wrap {
     width: 80px;
     height: 100%;
 }
-.contents-wrap {
+
+/* Main Title 부분 */
+.main-title-wrap {
     width: calc(100% - 80px);
+    height: 100%;
+
+    .main-title-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-title {
+        font-family: 'Ubuntu';
+        font-weight: bold;
+        font-size: 40px;
+        color: #fff;
+    }
+}
+
+/* Children 부분 */
+.children-wrap {
+    width: 100%;
     height: 100%;
 }

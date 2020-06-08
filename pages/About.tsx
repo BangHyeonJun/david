@@ -36,7 +36,7 @@ function About() {
     };
 
     return (
-        <Layout>
+        <Layout title={'ABOUT'}>
             <div>테스트</div>
             {/* <motion.div
                 initial="initial"

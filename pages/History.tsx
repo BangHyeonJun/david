@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 function History() {
     return (
-        <Layout>
+        <Layout title={'HISTORY'}>
             <div>히스토리</div>
             {/* <motion.div
                 animate={{ opacity: 1, backgroundColor: '#84B1ED' }}

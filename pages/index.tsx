@@ -57,7 +57,7 @@ function Index() {
     };
 
     return (
-        <Layout>
+        <Layout title={'HOME'}>
             <div>테스트</div>
             {/* <motion.div
                 initial="initial"

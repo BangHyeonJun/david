@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 function Portfolio() {
     return (
-        <Layout>
+        <Layout title={'PORTFOLIO'}>
             <div>포트폴리오</div>
             {/* <motion.div
                 animate={{ opacity: 1, backgroundColor: '#84B1ED' }}

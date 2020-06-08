@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 function Blog() {
     return (
-        <Layout>
+        <Layout title={'BLOG'}>
             <div>블로그 </div>
             {/* <motion.div
                 animate={{ opacity: 1, backgroundColor: '#84B1ED' }}
