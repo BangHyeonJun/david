@@ -2,10 +2,11 @@ import React, { createContext, Dispatch, useReducer, useContext } from 'react';
 
 /* 사이드 바 State */
 export type SideBarState = {
-    id: string; // 메뉴 아이디
-    name: string; // 사용자에게 보여질 메뉴 이름
-    active: boolean; // 현재 active 상태
+    id: string;
+    title: string;
+    style: string;
     url: string;
+    active: boolean;
 };
 
 /* 사이드 바 메뉴들이 들어갈 리스트 */
@@ -15,7 +16,10 @@ const SideBarsStateContext = createContext<SideBarsState | undefined>(
     undefined,
 );
 
-type Action = { type: 'ACTIVE'; id: string };
+type Action =
+    | { type: 'INIT'; menus: SideBarsState }
+    | { type: 'ACTIVE'; pathName: string };
+
 // | { type: 'INIT'; SideBars: SideBarsState }
 // | { type: 'CREATE'; SideBar: SideBarState }
 // | { type: 'ACTIVE'; id: string }
@@ -35,11 +39,15 @@ const SideBarsDispatchContext = createContext<SideBarsDispatch | undefined>(
 
 function SideBarsReducer(state: SideBarsState, action: Action): SideBarsState {
     switch (action.type) {
+        /* 사용자가 메뉴항목을 초기화 하는 리듀서 */
+        case 'INIT':
+            return action.menus;
+
         /* 사용자가 메뉴 클릭시 실행 되어지는 리듀서 */
         case 'ACTIVE':
             return state.map(item => ({
                 ...item,
-                active: item.id === action.id,
+                active: item.url === action.pathName,
             }));
         default:
             throw new Error('Unhandled action');
@@ -54,15 +62,45 @@ export function SideBarsContextProvider({
     const [SideBars, dispatch] = useReducer(SideBarsReducer, [
         {
             id: 'home',
-            name: 'HOME',
-            active: true,
-            url: '/home',
+            title: 'HOME',
+            style: 'home',
+            url: '/',
+            active: false,
         },
         {
             id: 'about',
-            name: 'ABOUT',
-            active: false,
+            title: 'ABOUT',
+            style: 'about',
             url: '/about',
+            active: false,
+        },
+        {
+            id: 'history',
+            title: 'HISTORY',
+            style: 'history',
+            url: '/history',
+            active: false,
+        },
+        {
+            id: 'portfolio',
+            title: 'PORTFOLIO',
+            style: 'portfolio',
+            url: '/portfolio',
+            active: false,
+        },
+        {
+            id: 'blog',
+            title: 'BLOG',
+            style: 'blog',
+            url: '/blog',
+            active: false,
+        },
+        {
+            id: 'contact',
+            title: 'CONTACT',
+            style: 'contact',
+            url: '/contact',
+            active: false,
         },
     ]);
 

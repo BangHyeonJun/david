@@ -5,7 +5,7 @@
     flex-direction: row;
     align-items: center;
     position: relative;
-    background-color: #fffff3;
+    background-color: #1d1d1d;
 }
 
 .sidebar-wrap {
@@ -15,7 +15,4 @@
 .contents-wrap {
     width: calc(100% - 80px);
     height: 100%;
-
-    // 임시
-    background-color: #1d1d1d;
 }

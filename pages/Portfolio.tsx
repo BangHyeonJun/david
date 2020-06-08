@@ -4,10 +4,10 @@ import Layout from './components/Layout/Layout';
 
 import { motion } from 'framer-motion';
 
-function Blog() {
+function Portfolio() {
     return (
         <Layout>
-            <div>블로그 </div>
+            <div>포트폴리오</div>
             {/* <motion.div
                 animate={{ opacity: 1, backgroundColor: '#84B1ED' }}
                 initial={{ opacity: 1, backgroundColor: '#000000' }}
@@ -25,4 +25,4 @@ function Blog() {
     );
 }
 
-export default Blog;
+export default Portfolio;

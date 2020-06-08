@@ -43,7 +43,7 @@
         .logo {
             width: 100%;
             height: 72%;
-            background-image: url('../../../public/img/logo.png');
+            background-image: url('../../../../public/img/logo.png');
             background-size: 62px 62px;
             background-repeat: no-repeat;
             background-position: 50% 100%;
@@ -106,20 +106,23 @@
 
             &.active {
                 .home {
-                    background-image: url('../../../public/img/sidebar/home_active.svg');
+                    background-image: url('../../../../public/img/sidebar/home_active.svg');
                 }
 
                 .about {
-                    background-image: url('../../../public/img/sidebar/about_active.svg');
+                    background-image: url('../../../../public/img/sidebar/about_active.svg');
                 }
                 .history {
-                    background-image: url('../../../public/img/sidebar/history_active.svg');
+                    background-image: url('../../../../public/img/sidebar/history_active.svg');
                 }
                 .blog {
-                    background-image: url('../../../public/img/sidebar/blog_active.svg');
+                    background-image: url('../../../../public/img/sidebar/blog_active.svg');
                 }
                 .contact {
-                    background-image: url('../../../public/img/sidebar/contact_active.svg');
+                    background-image: url('../../../../public/img/sidebar/contact_active.svg');
+                }
+                .portfolio {
+                    background-image: url('../../../../public/img/sidebar/portfolio_active.svg');
                 }
             }
 
@@ -139,20 +142,23 @@
                 }
 
                 .home {
-                    background-image: url('../../../public/img/sidebar/home.svg');
+                    background-image: url('../../../../public/img/sidebar/home.svg');
                 }
 
                 .about {
-                    background-image: url('../../../public/img/sidebar/about.svg');
+                    background-image: url('../../../../public/img/sidebar/about.svg');
                 }
                 .history {
-                    background-image: url('../../../public/img/sidebar/history.svg');
+                    background-image: url('../../../../public/img/sidebar/history.svg');
                 }
                 .blog {
-                    background-image: url('../../../public/img/sidebar/blog.svg');
+                    background-image: url('../../../../public/img/sidebar/blog.svg');
                 }
                 .contact {
-                    background-image: url('../../../public/img/sidebar/contact.svg');
+                    background-image: url('../../../../public/img/sidebar/contact.svg');
+                }
+                .portfolio {
+                    background-image: url('../../../../public/img/sidebar/portfolio.svg');
                 }
             }
         }
@@ -166,6 +172,67 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        .sns-item {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            user-select: none;
+            cursor: pointer;
+
+            .title {
+                transform: rotate3d(0, 1, 0, 90deg);
+                transition: all 250ms ease-in-out;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                font-family: 'ubuntu';
+                font-weight: 100;
+                font-size: 14px;
+                opacity: 0;
+                text-align: center;
+            }
+
+            .icon {
+                width: 24px;
+                height: 24px;
+                background-size: 24px 24px;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                transform: rotate3d(0, 1, 0, 0deg);
+                transition: all 250ms ease-in-out;
+                position: absolute;
+            }
+
+            &:hover {
+                .title {
+                    transform: rotate3d(0, 1, 0, 0deg);
+                    color: #08fdd8;
+                    opacity: 1;
+                }
+
+                .icon {
+                    transform: rotate3d(0, 1, 0, 90deg);
+                }
+            }
+
+            .kakao {
+                background-image: url('../../../../public/img/sidebar/kakao.svg');
+            }
+            .insta {
+                background-image: url('../../../../public/img/sidebar/instagram.svg');
+            }
+            .linkedin {
+                background-image: url('../../../../public/img/sidebar/linkedin.svg');
+            }
+            .rss {
+                background-image: url('../../../../public/img/sidebar/rss.svg');
+            }
+        }
     }
 }
 

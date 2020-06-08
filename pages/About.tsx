@@ -1,37 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import React from 'react';
 
 // 스타일
 import classNames from 'classnames/bind';
-import styles from './index.module.scss';
-const cx = classNames.bind(styles);
+// import styles from './About.module.scss';
+// const cx = classNames.bind(styles);
 
-// 컴포넌트
 import Layout from './components/Layout/Layout';
+
 import { motion, AnimatePresence } from 'framer-motion';
 
-const icon = {
-    hidden: {
-        opacity: 0,
-        pathLength: 0,
-        fill: 'rgba(255, 255, 255, 0)',
-    },
-    visible: {
-        opacity: 1,
-        pathLength: 1,
-        fill: 'rgba(255, 255, 255, 1)',
-    },
-};
-
-function Index() {
-    const [state, setstate] = useState(true);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setstate(false);
-        }, 2000);
-    }, []);
-
+function About() {
     const pageVariants = {
         initial: {
             // opacity: 0,
@@ -45,7 +23,7 @@ function Index() {
             transform: `rotateY(0deg)`,
             perspectiveOrigin: 'center',
             perspective: '0px',
-            transition: { duration: 0.5 },
+            transition: { duration: 2 },
         },
         out: {
             // opacity: 0,
@@ -53,6 +31,7 @@ function Index() {
             perspectiveOrigin: 'center',
             perspective: '300px',
             transition: { duration: 2 },
+            // transition: { duration: 2 },
         },
     };
 
@@ -67,15 +46,15 @@ function Index() {
                 className={cx('wrap')}
             > */}
             {/* <motion.div
-                            animate={{ x: 0, opacity: 1 }}
-                            initial={{ x: 60, opacity: 0 }}
-                            className={cx('cardWrap')}
-                        >
-                            <h1>내 소개</h1>
-                        </motion.div> */}
+                animate={{ x: 0, opacity: 1 }}
+                initial={{ x: 60, opacity: 0 }}
+                className={cx('cardWrap')}
+            >
+                <h1>내 소개</h1>
+            </motion.div> */}
             {/* </motion.div> */}
         </Layout>
     );
 }
 
-export default Index;
+export default About;
