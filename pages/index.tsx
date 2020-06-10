@@ -282,10 +282,10 @@ function Index() {
                         </div>
                     </div>
                     <div className={cx('introduce-sub')}>
-                        <div>
+                        <div className={cx('introduce-sub-item')}>
                             <span>Frontend Developer</span>
                         </div>
-                        <div>
+                        <div className={cx('introduce-sub-item')}>
                             <span>Backend Developer</span>
                         </div>
                     </div>
@@ -303,6 +303,7 @@ function Index() {
                         type: 'spring',
                         stiffness: 260,
                         damping: 20,
+                        duration: 2,
                     }}
                     className={cx('picture-wrap')}
                 >
