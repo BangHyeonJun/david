@@ -12,6 +12,7 @@ body {
     font-size: 18px;
     width: 100%;
     height: 100%;
+    background-color: #181818;
     overflow: hidden;
 }
 
@@ -33,4 +34,5 @@ img {
 button {
     padding: 0;
     border: 0;
+    outline: none;
 }

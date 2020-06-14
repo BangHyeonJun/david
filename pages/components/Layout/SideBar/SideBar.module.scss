@@ -6,10 +6,6 @@
     // filter: drop-shadow(7px 1px 2px rgba(50, 50, 0, 0.5));
     display: flex;
     flex-direction: column;
-
-    @include responsive(tab_vert) {
-        flex-direction: row;
-    }
 }
 
 /* 사이드 바 컨테이너 */
@@ -17,6 +13,12 @@
     width: 100%;
     height: 100%;
     background-color: #181818;
+
+    @include responsive(tab_vert) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
     /*로고 박스*/
     .logo-box {
@@ -64,8 +66,9 @@
             background-position: 50% 100%;
 
             @include responsive(tab_vert) {
-                width: 100%;
-                height: 100%;
+                width: 40px;
+                height: 40px;
+                background-size: 100% 100%;
             }
         }
 
@@ -86,72 +89,160 @@
         }
     }
 
-    /*메뉴 박스*/
-    .menu-box {
+    .desktop-menus {
         width: 100%;
         height: calc(100% - 300px);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        display: block;
 
-        .menu-item {
+        @include responsive(tab_vert) {
+            display: none;
+        }
+
+        /*메뉴 박스*/
+        .menu-box {
             width: 100%;
-            height: 50px;
+            height: 100%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
-            user-select: none;
 
-            .title {
-                transform: rotate3d(0, 1, 0, 90deg);
-                transition: transform 250ms ease-in-out;
+            .menu-item {
+                width: 100%;
+                height: 50px;
                 display: flex;
-                align-items: center;
                 justify-content: center;
-                position: absolute;
-                font-family: 'ubuntu';
-                font-weight: 100;
-                font-size: 14px;
-                opacity: 0;
+                align-items: center;
+                position: relative;
+                user-select: none;
+
+                .title {
+                    transform: rotate3d(0, 1, 0, 90deg);
+                    transition: transform 250ms ease-in-out;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    font-family: 'ubuntu';
+                    font-weight: 100;
+                    font-size: 14px;
+                    opacity: 0;
+                }
+
+                .icon {
+                    width: 24px;
+                    height: 24px;
+                    background-size: 24px 24px;
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    transform: rotate3d(0, 1, 0, 0deg);
+                    transition: transform 250ms ease-in-out;
+                    position: absolute;
+                }
+
+                &.active {
+                    .home {
+                        background-image: url('../../../../public/img/sidebar/home_active.svg');
+                    }
+
+                    .about {
+                        background-image: url('../../../../public/img/sidebar/about_active.svg');
+                    }
+                    .history {
+                        background-image: url('../../../../public/img/sidebar/history_active.svg');
+                    }
+                    .blog {
+                        background-image: url('../../../../public/img/sidebar/blog_active.svg');
+                    }
+                    .contact {
+                        background-image: url('../../../../public/img/sidebar/contact_active.svg');
+                    }
+                    .portfolio {
+                        background-image: url('../../../../public/img/sidebar/portfolio_active.svg');
+                    }
+                }
+
+                &:not(.active) {
+                    cursor: pointer;
+
+                    &:hover {
+                        .title {
+                            transform: rotate3d(0, 1, 0, 0deg);
+                            color: #08fdd8;
+                            opacity: 1;
+                        }
+
+                        .icon {
+                            transform: rotate3d(0, 1, 0, 90deg);
+                        }
+                    }
+
+                    .home {
+                        background-image: url('../../../../public/img/sidebar/home.svg');
+                    }
+
+                    .about {
+                        background-image: url('../../../../public/img/sidebar/about.svg');
+                    }
+                    .history {
+                        background-image: url('../../../../public/img/sidebar/history.svg');
+                    }
+                    .blog {
+                        background-image: url('../../../../public/img/sidebar/blog.svg');
+                    }
+                    .contact {
+                        background-image: url('../../../../public/img/sidebar/contact.svg');
+                    }
+                    .portfolio {
+                        background-image: url('../../../../public/img/sidebar/portfolio.svg');
+                    }
+                }
             }
+        }
 
-            .icon {
-                width: 24px;
-                height: 24px;
-                background-size: 24px 24px;
-                background-repeat: no-repeat;
-                background-position: 50% 50%;
-                transform: rotate3d(0, 1, 0, 0deg);
-                transition: transform 250ms ease-in-out;
-                position: absolute;
-            }
+        /*sns 박스*/
+        .sns-box {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-            &.active {
-                .home {
-                    background-image: url('../../../../public/img/sidebar/home_active.svg');
-                }
-
-                .about {
-                    background-image: url('../../../../public/img/sidebar/about_active.svg');
-                }
-                .history {
-                    background-image: url('../../../../public/img/sidebar/history_active.svg');
-                }
-                .blog {
-                    background-image: url('../../../../public/img/sidebar/blog_active.svg');
-                }
-                .contact {
-                    background-image: url('../../../../public/img/sidebar/contact_active.svg');
-                }
-                .portfolio {
-                    background-image: url('../../../../public/img/sidebar/portfolio_active.svg');
-                }
-            }
-
-            &:not(.active) {
+            .sns-item {
+                width: 100%;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                user-select: none;
                 cursor: pointer;
+
+                .title {
+                    transform: rotate3d(0, 1, 0, 90deg);
+                    transition: transform 250ms ease-in-out;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    font-family: 'ubuntu';
+                    font-weight: 100;
+                    font-size: 14px;
+                    opacity: 0;
+                    text-align: center;
+                }
+
+                .icon {
+                    width: 24px;
+                    height: 24px;
+                    background-size: 24px 24px;
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    transform: rotate3d(0, 1, 0, 0deg);
+                    transition: transform 250ms ease-in-out;
+                    position: absolute;
+                }
 
                 &:hover {
                     .title {
@@ -165,97 +256,86 @@
                     }
                 }
 
-                .home {
-                    background-image: url('../../../../public/img/sidebar/home.svg');
+                .kakao {
+                    background-image: url('../../../../public/img/sidebar/kakao.svg');
                 }
-
-                .about {
-                    background-image: url('../../../../public/img/sidebar/about.svg');
+                .insta {
+                    background-image: url('../../../../public/img/sidebar/instagram.svg');
                 }
-                .history {
-                    background-image: url('../../../../public/img/sidebar/history.svg');
+                .linkedin {
+                    background-image: url('../../../../public/img/sidebar/linkedin.svg');
                 }
-                .blog {
-                    background-image: url('../../../../public/img/sidebar/blog.svg');
-                }
-                .contact {
-                    background-image: url('../../../../public/img/sidebar/contact.svg');
-                }
-                .portfolio {
-                    background-image: url('../../../../public/img/sidebar/portfolio.svg');
+                .rss {
+                    background-image: url('../../../../public/img/sidebar/rss.svg');
                 }
             }
         }
     }
+}
 
-    /*sns 박스*/
-    .sns-box {
+.menu-btn-wrap {
+    width: 60px;
+    height: 60px;
+    display: none;
+
+    @include responsive(tab_vert) {
+        display: block;
+    }
+
+    .menu-btton {
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-color: rgba($color: #000000, $alpha: 0);
         width: 100%;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        height: 100%;
 
-        .sns-item {
-            width: 100%;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            user-select: none;
-            cursor: pointer;
-
-            .title {
-                transform: rotate3d(0, 1, 0, 90deg);
-                transition: transform 250ms ease-in-out;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                font-family: 'ubuntu';
-                font-weight: 100;
-                font-size: 14px;
-                opacity: 0;
-                text-align: center;
-            }
-
-            .icon {
-                width: 24px;
-                height: 24px;
-                background-size: 24px 24px;
-                background-repeat: no-repeat;
-                background-position: 50% 50%;
-                transform: rotate3d(0, 1, 0, 0deg);
-                transition: transform 250ms ease-in-out;
-                position: absolute;
-            }
-
-            &:hover {
-                .title {
-                    transform: rotate3d(0, 1, 0, 0deg);
-                    color: #08fdd8;
-                    opacity: 1;
-                }
-
-                .icon {
-                    transform: rotate3d(0, 1, 0, 90deg);
-                }
-            }
-
-            .kakao {
-                background-image: url('../../../../public/img/sidebar/kakao.svg');
-            }
-            .insta {
-                background-image: url('../../../../public/img/sidebar/instagram.svg');
-            }
-            .linkedin {
-                background-image: url('../../../../public/img/sidebar/linkedin.svg');
-            }
-            .rss {
-                background-image: url('../../../../public/img/sidebar/rss.svg');
-            }
+        &.close {
+            transform: rotate(360deg);
+            transition: transform 250ms ease-in-out;
+            background-image: url('../../../../public/img/sidebar/close.svg');
         }
+
+        &.menu {
+            transform: rotate(0deg);
+            transition: transform 250ms ease-in-out;
+            background-image: url('../../../../public/img/sidebar/menu.svg');
+        }
+    }
+}
+
+.menu-wrap {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px);
+    top: 60px;
+    background-color: rgba($color: #181818, $alpha: 1);
+    animation-fill-mode: forwards;
+    z-index: 9999;
+    opacity: 1;
+    display: none;
+
+    @include responsive(tab_vert) {
+        display: block;
+    }
+
+    &.show {
+        transform: translate(0%, 0%);
+        transition: transform 500ms ease-in;
+    }
+
+    &.hide {
+        transform: translate(0%, 100%);
+        opacity: 0;
+        transition: opacity 200ms ease-in;
+    }
+
+    // &.init {
+    //     opacity: 0;
+    // }
+
+    .menu-item {
+        width: 100%;
+        height: 40px;
     }
 }

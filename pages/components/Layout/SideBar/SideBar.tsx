@@ -29,7 +29,8 @@ function SideBar() {
     const setSideBarsDispatch = useSideBarsDispatch();
     const router = useRouter();
     const size = useWindowSize();
-    const [width, setWidth] = useState(1024);
+    const [width, setWidth] = useState(0);
+    const [menuFlag, setMenuFlag] = useState(false);
 
     useEffect(() => {
         setSideBarsDispatch({
@@ -41,6 +42,14 @@ function SideBar() {
     useEffect(() => {
         setWidth(size.width);
     }, [size]);
+
+    const handleMenuButton = (
+        e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    ) => {
+        e.preventDefault();
+
+        setMenuFlag(old => !old);
+    };
 
     return (
         <div className={cx('wrap')}>
@@ -55,62 +64,90 @@ function SideBar() {
                     </div>
                 </div>
 
-                {width > 768 ? (
-                    <>
-                        {/* 메뉴 */}
-                        <div className={cx('menu-box')}>
-                            {SideBarsState.map((menu, idx) => (
-                                <Link key={menu.id} href={menu.url}>
-                                    <motion.div
-                                        className={cx('menu-item', {
-                                            active: menu.active,
-                                        })}
-                                        whileTap={{
-                                            scale: 0.8,
-                                            borderRadius: '100%',
-                                        }}
-                                        transition={{
-                                            duration: 0.5,
-                                        }}
-                                    >
+                <div className={cx('desktop-menus')}>
+                    {/* 메뉴 */}
+                    <div className={cx('menu-box')}>
+                        {SideBarsState.map((menu, idx) => (
+                            <Link key={menu.id} href={menu.url}>
+                                <motion.div
+                                    className={cx('menu-item', {
+                                        active: menu.active,
+                                    })}
+                                    whileTap={{
+                                        scale: 0.8,
+                                        borderRadius: '100%',
+                                    }}
+                                    transition={{
+                                        duration: 0.5,
+                                    }}
+                                >
+                                    <div
+                                        className={cx('icon', `${menu.style}`)}
+                                    ></div>
+                                    <span className={cx('title')}>
+                                        {menu.title}
+                                    </span>
+                                </motion.div>
+                            </Link>
+                        ))}
+                    </div>
+
+                    {/* 컨텍트 */}
+                    <div className={cx('sns-box')}>
+                        {snsState.map(sns => (
+                            <Link key={sns.id} href={sns.href}>
+                                <a target="_blank">
+                                    <div className={cx('sns-item')}>
                                         <div
                                             className={cx(
                                                 'icon',
-                                                `${menu.style}`,
+                                                `${sns.style}`,
                                             )}
                                         ></div>
                                         <span className={cx('title')}>
-                                            {menu.title}
+                                            {sns.title}
                                         </span>
-                                    </motion.div>
-                                </Link>
-                            ))}
-                        </div>
+                                    </div>
+                                </a>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
 
-                        {/* 컨텍트 */}
-                        <div className={cx('sns-box')}>
-                            {snsState.map(sns => (
-                                <Link key={sns.id} href={sns.href}>
-                                    <a target="_blank">
-                                        <div className={cx('sns-item')}>
-                                            <div
-                                                className={cx(
-                                                    'icon',
-                                                    `${sns.style}`,
-                                                )}
-                                            ></div>
-                                            <span className={cx('title')}>
-                                                {sns.title}
-                                            </span>
-                                        </div>
-                                    </a>
-                                </Link>
-                            ))}
-                        </div>
-                    </>
-                ) : (
-                    <div>테스트</div>
-                )}
+                <div className={cx('menu-btn-wrap')}>
+                    <button
+                        onClick={handleMenuButton}
+                        className={cx(
+                            'menu-btton',
+                            { close: menuFlag },
+                            { menu: !menuFlag },
+                        )}
+                    />
+                </div>
+                <div
+                    className={cx(
+                        'menu-wrap',
+                        { show: menuFlag },
+                        { hide: !menuFlag },
+                    )}
+                >
+                    {SideBarsState.map(menu => (
+                        <Link key={menu.id} href={menu.url}>
+                            <div
+                                className={cx('menu-item', {
+                                    active: menu.active,
+                                })}
+                            >
+                                <div
+                                    className={cx('icon', `${menu.style}`)}
+                                ></div>
+                                <span className={cx('title')}>
+                                    {menu.title}
+                                </span>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
     );
