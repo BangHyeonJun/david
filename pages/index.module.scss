@@ -1,4 +1,4 @@
-$box-color: rgba(#ee7785, 1);
+@import './styles/screen';
 
 .wrap {
     width: 100%;
@@ -34,9 +34,7 @@ $box-color: rgba(#ee7785, 1);
         }
 
         .david {
-            background: linear-gradient(to right, #0afdd8, #0afdd8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #0afdd8;
             cursor: pointer;
         }
     }
@@ -50,6 +48,7 @@ $box-color: rgba(#ee7785, 1);
     color: #8d8d8d;
 
     .introduce-sub-item {
+        overflow: hidden;
     }
 }
 
@@ -57,14 +56,16 @@ $box-color: rgba(#ee7785, 1);
     width: 100%;
     height: 100%;
     position: absolute;
-    padding-left: 40%;
     right: 0;
+    display: flex;
+    justify-content: flex-end;
 
     .mainIMG {
-        clip-path: circle(84.3% at 100% 50%);
+        border-top-left-radius: 5000px;
+        border-bottom-left-radius: 5000px;
         filter: opacity(0.4);
 
-        width: 100%;
+        width: 700px;
         height: inherit;
     }
 }

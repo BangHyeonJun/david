@@ -283,25 +283,58 @@ function Index() {
                     </div>
                     <div className={cx('introduce-sub')}>
                         <div className={cx('introduce-sub-item')}>
-                            <span>Frontend Developer</span>
+                            <motion.div
+                                initial={{
+                                    transform: 'translate(-130px, 0px)',
+                                }}
+                                animate={{
+                                    transform: 'translate(0px, 0px)',
+                                }}
+                                transition={{
+                                    type: 'spring',
+                                    stiffness: 260,
+                                    damping: 10,
+                                    delay: 1,
+                                }}
+                            >
+                                Frontend Developer
+                            </motion.div>
                         </div>
                         <div className={cx('introduce-sub-item')}>
-                            <span>Backend Developer</span>
+                            &nbsp;/&nbsp;
+                        </div>
+                        <div className={cx('introduce-sub-item')}>
+                            <motion.div
+                                initial={{
+                                    transform: 'translate(-130px, 0px)',
+                                }}
+                                animate={{
+                                    transform: 'translate(0px, 0px)',
+                                }}
+                                transition={{
+                                    type: 'spring',
+                                    stiffness: 100,
+                                    damping: 10,
+                                    delay: 1,
+                                }}
+                            >
+                                Backend Developer
+                            </motion.div>
                         </div>
                     </div>
                 </div>
                 <motion.div
                     initial={{
-                        clipPath: 'circle(0% at 100% 50%)',
+                        clipPath: 'circle(0px at 100% 50%)',
                         filter: 'opacity(1)',
                     }}
                     animate={{
-                        clipPath: 'circle(84.3% at 100% 50%)',
+                        clipPath: 'circle(700px at 100% 50%)',
                         filter: 'opacity(0.4)',
                     }}
                     transition={{
                         type: 'spring',
-                        stiffness: 260,
+                        stiffness: 70,
                         damping: 20,
                     }}
                     className={cx('picture-wrap')}

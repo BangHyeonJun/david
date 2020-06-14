@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
+import useWindowSize from '../../../utils/resize';
 
 // 컨텍스트
 import {
@@ -14,8 +16,6 @@ import classNames from 'classnames/bind';
 import styles from './SideBar.module.scss';
 const cx = classNames.bind(styles);
 
-import { motion } from 'framer-motion';
-
 type menuType = {
     title: string;
     style: string;
@@ -28,6 +28,8 @@ function SideBar() {
     const snsState = useSnsState();
     const setSideBarsDispatch = useSideBarsDispatch();
     const router = useRouter();
+    const size = useWindowSize();
+    const [width, setWidth] = useState(1024);
 
     useEffect(() => {
         setSideBarsDispatch({
@@ -35,6 +37,10 @@ function SideBar() {
             pathName: router.pathname,
         });
     }, [router]);
+
+    useEffect(() => {
+        setWidth(size.width);
+    }, [size]);
 
     return (
         <div className={cx('wrap')}>
@@ -49,50 +55,62 @@ function SideBar() {
                     </div>
                 </div>
 
-                {/* 메뉴 */}
-                <div className={cx('menu-box')}>
-                    {SideBarsState.map((menu, idx) => (
-                        <Link key={menu.id} href={menu.url}>
-                            <motion.div
-                                className={cx('menu-item', {
-                                    active: menu.active,
-                                })}
-                                whileTap={{
-                                    scale: 0.8,
-                                    borderRadius: '100%',
-                                }}
-                                transition={{
-                                    duration: 0.5,
-                                }}
-                            >
-                                <div
-                                    className={cx('icon', `${menu.style}`)}
-                                ></div>
-                                <span className={cx('title')}>
-                                    {menu.title}
-                                </span>
-                            </motion.div>
-                        </Link>
-                    ))}
-                </div>
+                {width > 768 ? (
+                    <>
+                        {/* 메뉴 */}
+                        <div className={cx('menu-box')}>
+                            {SideBarsState.map((menu, idx) => (
+                                <Link key={menu.id} href={menu.url}>
+                                    <motion.div
+                                        className={cx('menu-item', {
+                                            active: menu.active,
+                                        })}
+                                        whileTap={{
+                                            scale: 0.8,
+                                            borderRadius: '100%',
+                                        }}
+                                        transition={{
+                                            duration: 0.5,
+                                        }}
+                                    >
+                                        <div
+                                            className={cx(
+                                                'icon',
+                                                `${menu.style}`,
+                                            )}
+                                        ></div>
+                                        <span className={cx('title')}>
+                                            {menu.title}
+                                        </span>
+                                    </motion.div>
+                                </Link>
+                            ))}
+                        </div>
 
-                {/* 컨텍트 */}
-                <div className={cx('sns-box')}>
-                    {snsState.map(sns => (
-                        <Link key={sns.id} href={sns.href}>
-                            <a target="_blank">
-                                <div className={cx('sns-item')}>
-                                    <div
-                                        className={cx('icon', `${sns.style}`)}
-                                    ></div>
-                                    <span className={cx('title')}>
-                                        {sns.title}
-                                    </span>
-                                </div>
-                            </a>
-                        </Link>
-                    ))}
-                </div>
+                        {/* 컨텍트 */}
+                        <div className={cx('sns-box')}>
+                            {snsState.map(sns => (
+                                <Link key={sns.id} href={sns.href}>
+                                    <a target="_blank">
+                                        <div className={cx('sns-item')}>
+                                            <div
+                                                className={cx(
+                                                    'icon',
+                                                    `${sns.style}`,
+                                                )}
+                                            ></div>
+                                            <span className={cx('title')}>
+                                                {sns.title}
+                                            </span>
+                                        </div>
+                                    </a>
+                                </Link>
+                            ))}
+                        </div>
+                    </>
+                ) : (
+                    <div>테스트</div>
+                )}
             </div>
         </div>
     );

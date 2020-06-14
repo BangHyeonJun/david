@@ -1,3 +1,5 @@
+@import '../../styles/screen';
+
 /* 전체를 감싸는 부분 */
 .wrap {
     width: 100%;
@@ -7,18 +9,33 @@
     align-items: center;
     position: relative;
     background-color: #1d1d1d;
+
+    @include responsive(tab_vert) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* 사이드 바 부분 */
 .sidebar-wrap {
     width: 80px;
     height: 100%;
+
+    @include responsive(tab_vert) {
+        width: 100%;
+        height: 60px;
+    }
 }
 
 /* Main Title 부분 */
 .main-title-wrap {
     width: calc(100% - 80px);
     height: 100%;
+
+    @include responsive(tab_vert) {
+        width: 100%;
+        height: calc(100% - 60px);
+    }
 
     .main-title-container {
         width: 100%;
