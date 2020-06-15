@@ -39,14 +39,14 @@ function Layout({ children, title }: LayoutProps) {
     const mainTitleContainer = {
         initial: {
             opacity: 0,
-            transform: `rotateY(360deg)`,
+            // transform: `rotateY(360deg)`,
             perspectiveOrigin: 'center',
             perspective: '300px',
             transition: { duration: 0.5 },
         },
         in: {
             opacity: 1,
-            transform: `rotateY(0deg)`,
+            // transform: `rotateY(0deg)`,
             perspectiveOrigin: 'center',
             perspective: '0px',
             transition: { duration: 0.5 },
@@ -54,7 +54,7 @@ function Layout({ children, title }: LayoutProps) {
         },
         out: {
             opacity: 0,
-            transform: `rotateY(360deg)`,
+            // transform: `rotateY(360deg)`,
             perspectiveOrigin: 'center',
             perspective: '300px',
             transition: { duration: 0.5, delay: 0.3 },

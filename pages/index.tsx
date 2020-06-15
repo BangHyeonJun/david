@@ -323,27 +323,32 @@ function Index() {
                         </div>
                     </div>
                 </div>
-                <motion.div
-                    initial={{
-                        clipPath: 'circle(0px at 100% 50%)',
-                        filter: 'opacity(1)',
-                    }}
-                    animate={{
-                        clipPath: 'circle(700px at 100% 50%)',
-                        filter: 'opacity(0.4)',
-                    }}
-                    transition={{
-                        type: 'spring',
-                        stiffness: 70,
-                        damping: 20,
-                    }}
-                    className={cx('picture-wrap')}
-                >
-                    <img
-                        src={'img/home/main.png'}
-                        className={cx('mainIMG')}
-                    ></img>
-                </motion.div>
+                <div className={cx('picture-wrap')}>
+                    <motion.div
+                        initial={{
+                            clipPath: 'circle(0px at 100% 50%)',
+                            filter: 'opacity(1)',
+                        }}
+                        animate={{
+                            clipPath: 'circle(700px at 100% 50%)',
+                            filter: 'opacity(0.4)',
+                            // transitionEnd: {
+                            //     clipPath: 'none',
+                            // },
+                        }}
+                        transition={{
+                            type: 'spring',
+                            stiffness: 70,
+                            damping: 20,
+                        }}
+                        className={cx('picture-container')}
+                    >
+                        <img
+                            src={'img/home/main.png'}
+                            className={cx('mainIMG')}
+                        ></img>
+                    </motion.div>
+                </div>
             </div>
         </Layout>
     );
