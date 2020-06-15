@@ -10,6 +10,9 @@ const cx = classNames.bind(styles);
 import Layout from './components/Layout/Layout';
 import { motion, AnimatePresence, transform } from 'framer-motion';
 
+// 유틸
+import useWindowSize from './utils/resize';
+
 const icon = {
     hidden: {
         opacity: 0,
@@ -25,6 +28,7 @@ const icon = {
 
 function Index() {
     const [state, setstate] = useState(true);
+    const { width } = useWindowSize();
 
     useEffect(() => {
         setTimeout(() => {
@@ -330,7 +334,10 @@ function Index() {
                             filter: 'opacity(1)',
                         }}
                         animate={{
-                            clipPath: 'circle(700px at 100% 50%)',
+                            clipPath:
+                                width > 768
+                                    ? 'circle(700px at 100% 50%)'
+                                    : 'circle(100% at 90% 50%)',
                             filter: 'opacity(0.4)',
                             // transitionEnd: {
                             //     clipPath: 'none',
