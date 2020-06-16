@@ -169,27 +169,28 @@ function Index() {
                                     damping: 20,
                                     ease: 'circIn',
                                 }}
-                                whileHover={{
-                                    transform: [
-                                        'scale(1) rotateZ(0deg)',
-                                        'scale(1.2) rotateZ(0deg)',
-                                        'scale(1.2) rotateZ(-5deg)',
-                                        'scale(1.2) rotateZ(5deg)',
-                                        'scale(1.2) rotateZ(-5deg)',
-                                        'scale(1.2) rotateZ(5deg)',
-                                        'scale(1.2) rotateZ(-5deg)',
-                                        'scale(1.2) rotateZ(5deg)',
-                                        'scale(1.2) rotateZ(-5deg)',
-                                        'scale(1.2) rotateZ(5deg)',
-                                        'scale(1.2) rotateZ(0deg)',
-                                        'scale(1) rotateZ(0deg)',
-                                    ],
-                                    transition: {
-                                        loop: 'Infinity',
-                                        duration: 0.7,
-                                        repeatDelay: 1,
-                                    },
-                                }}
+                                className={cx('david-wrap')}
+                                // whileHover={{
+                                //     transform: [
+                                //         'scale(1) rotateZ(0deg)',
+                                //         'scale(1.2) rotateZ(0deg)',
+                                //         'scale(1.2) rotateZ(-5deg)',
+                                //         'scale(1.2) rotateZ(5deg)',
+                                //         'scale(1.2) rotateZ(-5deg)',
+                                //         'scale(1.2) rotateZ(5deg)',
+                                //         'scale(1.2) rotateZ(-5deg)',
+                                //         'scale(1.2) rotateZ(5deg)',
+                                //         'scale(1.2) rotateZ(-5deg)',
+                                //         'scale(1.2) rotateZ(5deg)',
+                                //         'scale(1.2) rotateZ(0deg)',
+                                //         'scale(1) rotateZ(0deg)',
+                                //     ],
+                                //     transition: {
+                                //         loop: 'Infinity',
+                                //         duration: 0.7,
+                                //         repeatDelay: 1,
+                                //     },
+                                // }}
                             >
                                 <Link href={'/About'}>
                                     <span className={cx('parisienne', 'david')}>
