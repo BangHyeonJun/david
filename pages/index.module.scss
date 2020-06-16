@@ -60,7 +60,7 @@
             }
 
             21% {
-                transform: scale(1.2) rotateZ(-5deg);
+                transform: scale(1.2) rotateZ(0deg);
             }
 
             28% {
@@ -74,9 +74,14 @@
 
         .david-wrap {
             animation-name: davidAnimation;
-            animation-delay: 2s;
+            animation-delay: 2.2s;
             animation-duration: 2s;
             animation-iteration-count: infinite;
+
+            &:hover {
+                animation-name: none;
+                transform: scale(1.2) rotateZ(0deg) !important;
+            }
         }
         .david {
             color: #0afdd8;
