@@ -338,7 +338,7 @@ function Index() {
                             clipPath:
                                 width > 768
                                     ? 'circle(700px at 100% 50%)'
-                                    : 'circle(100% at 90% 50%)',
+                                    : 'circle(100% at 80% 50%)',
                             filter: 'opacity(0.4)',
                             // transitionEnd: {
                             //     clipPath: 'none',

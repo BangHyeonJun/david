@@ -16,6 +16,14 @@
     padding-left: 60px;
     box-sizing: border-box;
     z-index: 9999;
+
+    @include responsive(tab_vert) {
+        padding-left: 32px;
+    }
+
+    @include responsive(phone) {
+        padding-left: 20px;
+    }
 }
 
 .introduce-main {
@@ -24,10 +32,26 @@
     font-size: 64px;
     color: #ffffff;
 
+    @include responsive(tab_vert) {
+        font-size: 44px;
+    }
+
+    @include responsive(phone) {
+        font-size: 24px;
+    }
+
     .text-wrap {
         height: 102px;
         overflow: hidden;
         display: flex;
+
+        @include responsive(tab_vert) {
+            height: 68px;
+        }
+
+        @include responsive(phone) {
+            height: 46px;
+        }
 
         .parisienne {
             font-family: 'parisienne';
@@ -104,6 +128,10 @@
     font-weight: 300;
     font-size: 14px;
     color: #8d8d8d;
+
+    @include responsive(phone) {
+        font-size: 12px;
+    }
 
     .introduce-sub-item {
         overflow: hidden;
