@@ -16,7 +16,15 @@ import useWindowSize from './utils/resize';
 function history() {
     return (
         <Layout title={'HISTORY'}>
-            <div></div>
+            <div className={cx('title-wrap')}></div>
+
+            {/* 히스토리 막대 */}
+            <div className={cx('history-wrap')}>
+                <div className={cx('history-wrap')}>
+                    {/* 히스토리 막대 아티클 */}
+                    <section className={cx('history-wrap')}></section>
+                </div>
+            </div>
         </Layout>
     );
 }
