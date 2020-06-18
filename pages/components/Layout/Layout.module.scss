@@ -50,6 +50,16 @@
         font-weight: bold;
         font-size: 68px;
         color: #fff;
+
+        @include responsive(tab_vert) {
+            font-weight: 600;
+            font-size: 46px;
+        }
+
+        @include responsive(phone) {
+            font-weight: 600;
+            font-size: 34px;
+        }
     }
 }
 

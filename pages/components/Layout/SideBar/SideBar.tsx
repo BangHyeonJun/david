@@ -16,13 +16,6 @@ import classNames from 'classnames/bind';
 import styles from './SideBar.module.scss';
 const cx = classNames.bind(styles);
 
-type menuType = {
-    title: string;
-    style: string;
-    url: string;
-    active: boolean;
-};
-
 function SideBar() {
     const SideBarsState = useSideBarsState();
     const snsState = useSnsState();
@@ -55,14 +48,16 @@ function SideBar() {
         <div className={cx('wrap')}>
             <div className={cx('side-container')}>
                 {/* 로고 */}
-                <div className={cx('logo-box')}>
-                    <div className={cx('logo')}>
-                        {/* <img src={Logo}></img> */}
+                <Link key={SideBarsState[0].id} href={SideBarsState[0].url}>
+                    <div className={cx('logo-box')}>
+                        <div className={cx('logo')}>
+                            {/* <img src={Logo}></img> */}
+                        </div>
+                        <div className={cx('logo-title')}>
+                            <span>DAVID</span>
+                        </div>
                     </div>
-                    <div className={cx('logo-title')}>
-                        <span>DAVID</span>
-                    </div>
-                </div>
+                </Link>
 
                 <div className={cx('desktop-menus')}>
                     {/* 메뉴 */}
@@ -126,27 +121,49 @@ function SideBar() {
                 </div>
                 <div
                     className={cx(
-                        'menu-wrap',
+                        'phone-menus',
                         { show: menuFlag },
                         { hide: !menuFlag },
                     )}
                 >
-                    {SideBarsState.map(menu => (
-                        <Link key={menu.id} href={menu.url}>
-                            <div
-                                className={cx('menu-item', {
-                                    active: menu.active,
-                                })}
-                            >
+                    <div className={cx('menu-box')}>
+                        {SideBarsState.map(menu => (
+                            <Link key={menu.id} href={menu.url}>
                                 <div
-                                    className={cx('icon', `${menu.style}`)}
-                                ></div>
-                                <span className={cx('title')}>
-                                    {menu.title}
-                                </span>
-                            </div>
-                        </Link>
-                    ))}
+                                    className={cx('menu-item', {
+                                        active: menu.active,
+                                    })}
+                                >
+                                    <motion.div
+                                        whileTap={{
+                                            scale: 0.95,
+                                        }}
+                                        className={cx('title-box')}
+                                    >
+                                        <span className={cx('title')}>
+                                            {menu.title}
+                                        </span>
+                                    </motion.div>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                    <div className={cx('sns-box')}>
+                        {snsState.map(sns => (
+                            <Link key={sns.id} href={sns.href}>
+                                <a target="_blank">
+                                    <div className={cx('sns-item')}>
+                                        <div
+                                            className={cx(
+                                                'icon',
+                                                `${sns.style}`,
+                                            )}
+                                        ></div>
+                                    </div>
+                                </a>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
