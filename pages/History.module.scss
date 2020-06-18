@@ -6,37 +6,6 @@
     display: flex;
     position: relative;
     z-index: 9;
-
-    &::before {
-        content: '<html>';
-        position: absolute;
-        color: rgba(#fff, 0.6);
-        font-family: 'parisienne';
-        font-weight: bold;
-        font-size: 24px;
-        top: 10px;
-        left: 20px;
-    }
-
-    &::after {
-        content: '</html>';
-        position: absolute;
-        color: rgba(#fff, 0.6);
-        font-family: 'parisienne';
-        font-weight: bold;
-        font-size: 24px;
-        bottom: 10px;
-        left: 20px;
-    }
-
-    @include responsive(tab_vert) {
-        &::before {
-            display: none;
-        }
-        &::after {
-            display: none;
-        }
-    }
 }
 
 .introduce-wrap {
@@ -63,39 +32,9 @@
     font-weight: bold;
     font-size: 64px;
     color: #ffffff;
-    position: relative;
-
-    &::before {
-        content: '<body>';
-        position: absolute;
-        color: rgba(#fff, 0.6);
-        font-family: 'parisienne';
-        font-weight: bold;
-        font-size: 24px;
-        top: -24px;
-        left: -22px;
-    }
-
-    &::after {
-        content: '</body>';
-        position: absolute;
-        color: rgba(#fff, 0.6);
-        font-family: 'parisienne';
-        font-weight: bold;
-        font-size: 24px;
-        bottom: -68px;
-        left: -22px;
-    }
 
     @include responsive(tab_vert) {
         font-size: 44px;
-
-        &::before {
-            display: none;
-        }
-        &::after {
-            display: none;
-        }
     }
 
     @include responsive(phone) {

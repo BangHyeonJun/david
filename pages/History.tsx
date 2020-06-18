@@ -1,26 +1,22 @@
 import React from 'react';
+import Link from 'next/link';
 
+// 스타일
+import classNames from 'classnames/bind';
+import styles from './index.module.scss';
+const cx = classNames.bind(styles);
+
+// 컴포넌트
 import Layout from './components/Layout/Layout';
+import { motion, AnimatePresence, transform } from 'framer-motion';
 
-import { motion } from 'framer-motion';
+// 유틸
+import useWindowSize from './utils/resize';
 
 function history() {
     return (
         <Layout title={'HISTORY'}>
-            <div>히스토리</div>
-            {/* <motion.div
-                animate={{ opacity: 1, backgroundColor: '#84B1ED' }}
-                initial={{ opacity: 1, backgroundColor: '#000000' }}
-                className={cx('wrap')}
-            >
-                <motion.div
-                    animate={{ x: 0, opacity: 1 }}
-                    initial={{ x: 60, opacity: 0 }}
-                    className={cx('cardWrap')}
-                >
-                    <h1>내 소개</h1>
-                </motion.div>
-            </motion.div> */}
+            <div></div>
         </Layout>
     );
 }
