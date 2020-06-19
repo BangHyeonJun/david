@@ -1,28 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 
 // 스타일
 import classNames from 'classnames/bind';
-import styles from './index.module.scss';
+import styles from './history.module.scss';
 const cx = classNames.bind(styles);
 
 // 컴포넌트
 import Layout from './components/Layout/Layout';
-import { motion, AnimatePresence, transform } from 'framer-motion';
+import {
+    motion,
+    AnimatePresence,
+    transform,
+    useViewportScroll,
+    useTransform,
+} from 'framer-motion';
 
 // 유틸
 import useWindowSize from './utils/resize';
 
 function history() {
+    const { scrollYProgress } = useViewportScroll();
+    const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
+
+    useEffect(() => {
+        console.log(scrollYProgress);
+    }, [scrollYProgress]);
+
+    useEffect(() => {
+        console.log(scale);
+    }, [scale]);
+
     return (
         <Layout title={'HISTORY'}>
-            <div className={cx('title-wrap')}></div>
+            <div className={cx('wrap')}>
+                {/* 타이틀 Wrap*/}
+                <div className={cx('title-wrap')}></div>
 
-            {/* 히스토리 막대 */}
-            <div className={cx('history-wrap')}>
+                {/* 히스토리 막대 */}
                 <div className={cx('history-wrap')}>
-                    {/* 히스토리 막대 아티클 */}
-                    <section className={cx('history-wrap')}></section>
+                    <div className={cx('history-container')}>
+                        <section
+                            className={cx('history-section', 'active')}
+                        ></section>
+                    </div>
                 </div>
             </div>
         </Layout>
