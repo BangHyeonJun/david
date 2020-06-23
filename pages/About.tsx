@@ -31,7 +31,6 @@ function About() {
                     </div>
                     <div className={cx('-experience')}>
                         <span>경력기술서 링크</span>
-                        <span>블로그 링크</span>
                     </div>
                 </div>
             </div>
