@@ -28,7 +28,7 @@ const icon = {
 
 function Index() {
     const [state, setstate] = useState(true);
-    const { width } = useWindowSize();
+    const [width, height] = useWindowSize();
 
     useEffect(() => {
         setTimeout(() => {
@@ -58,6 +58,12 @@ function Index() {
             perspective: '300px',
             transition: { duration: 2 },
         },
+    };
+
+    const handleOnClickDavid = () => {
+        window.open(
+            'https://www.notion.so/366d4e3022314d2aa33c35d24c3b9cf1v4145ff77322d4bb18dbce40d60f88d5c/David-061e9007c86a43829e67c1bdd25df0d8',
+        );
     };
 
     return (
@@ -192,10 +198,15 @@ function Index() {
                                 //     },
                                 // }}
                             >
-                                <Link href={'/About'}>
-                                    <span className={cx('parisienne', 'david')}>
+                                <Link href="">
+                                    {/* <button onClick={handleOnClickDavid}> */}
+                                    <span
+                                        className={cx('parisienne', 'david')}
+                                        onClick={handleOnClickDavid}
+                                    >
                                         David
                                     </span>
+                                    {/* </button> */}
                                 </Link>
                             </motion.div>
                         </div>

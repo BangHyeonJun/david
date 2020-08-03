@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
-import useWindowSize from '../../../utils/resize';
 
 // 컨텍스트
 import {
@@ -16,13 +15,15 @@ import classNames from 'classnames/bind';
 import styles from './SideBar.module.scss';
 const cx = classNames.bind(styles);
 
+import useWindowSize from '../../../utils/resize';
+
 function SideBar() {
     const SideBarsState = useSideBarsState();
     const snsState = useSnsState();
     const setSideBarsDispatch = useSideBarsDispatch();
     const router = useRouter();
-    const size = useWindowSize();
-    const [width, setWidth] = useState(0);
+    const [width, height] = useWindowSize();
+    const [tempWidth, setTempWidth] = useState(0);
     const [menuFlag, setMenuFlag] = useState(false);
 
     useEffect(() => {
@@ -33,8 +34,8 @@ function SideBar() {
     }, [router]);
 
     useEffect(() => {
-        setWidth(size.width);
-    }, [size]);
+        setTempWidth(width);
+    }, [width]);
 
     const handleMenuButton = (
         e: React.MouseEvent<HTMLButtonElement, MouseEvent>,

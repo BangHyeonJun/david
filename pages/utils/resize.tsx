@@ -1,7 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+
+type sizeType = {
+    width?: number;
+    height?: number;
+};
+
+// type hooksType = {
+//     size: sizeType;
+//     setSize: Function;
+// };
 
 // Hook
-export default function useWindowSize() {
+function useWindowSize() {
     const isClient = typeof window === 'object';
 
     function getSize() {
@@ -11,7 +21,7 @@ export default function useWindowSize() {
         };
     }
 
-    const [windowSize, setWindowSize] = useState(getSize);
+    const [windowSize, setWindowSize] = useState<sizeType>(getSize);
 
     function handleResize() {
         setWindowSize(getSize());
@@ -34,5 +44,6 @@ export default function useWindowSize() {
         return () => removeResize();
     }, []); // Empty array ensures that effect is only run on mount and unmount
 
-    return windowSize;
+    return [windowSize.width, windowSize.height];
 }
+export default useWindowSize;

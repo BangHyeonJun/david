@@ -16,9 +16,6 @@ import {
     useTransform,
 } from 'framer-motion';
 
-// 유틸
-import useWindowSize from './utils/resize';
-
 function history() {
     const { scrollYProgress } = useViewportScroll();
     const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);

@@ -68,13 +68,13 @@ export function SideBarsContextProvider({
             url: '/',
             active: false,
         },
-        {
-            id: 'about',
-            title: 'ABOUT',
-            style: 'about',
-            url: '/About',
-            active: false,
-        },
+        // {
+        //     id: 'about',
+        //     title: 'ABOUT',
+        //     style: 'about',
+        //     url: '/About',
+        //     active: false,
+        // },
         // {
         //     id: 'history',
         //     title: 'HISTORY',
@@ -82,13 +82,13 @@ export function SideBarsContextProvider({
         //     url: '/History',
         //     active: false,
         // },
-        {
-            id: 'portfolio',
-            title: 'PORTFOLIO',
-            style: 'portfolio',
-            url: '/Portfolio',
-            active: false,
-        },
+        // {
+        //     id: 'portfolio',
+        //     title: 'PORTFOLIO',
+        //     style: 'portfolio',
+        //     url: '/Portfolio',
+        //     active: false,
+        // },
         // {
         //     id: 'blog',
         //     title: 'BLOG',
@@ -96,13 +96,13 @@ export function SideBarsContextProvider({
         //     url: '/Blog',
         //     active: false,
         // },
-        {
-            id: 'contact',
-            title: 'CONTACT',
-            style: 'contact',
-            url: '/Contact',
-            active: false,
-        },
+        // {
+        //     id: 'contact',
+        //     title: 'CONTACT',
+        //     style: 'contact',
+        //     url: '/Contact',
+        //     active: false,
+        // },
     ]);
 
     return (
