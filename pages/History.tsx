@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 // 스타일
 import classNames from 'classnames/bind';
-import styles from './history.module.scss';
+import styles from './History.module.scss';
 const cx = classNames.bind(styles);
 
 // 컴포넌트
