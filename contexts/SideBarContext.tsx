@@ -96,13 +96,13 @@ export function SideBarsContextProvider({
         //     url: '/Blog',
         //     active: false,
         // },
-        // {
-        //     id: 'contact',
-        //     title: 'CONTACT',
-        //     style: 'contact',
-        //     url: '/Contact',
-        //     active: false,
-        // },
+        {
+            id: 'contact',
+            title: 'CONTACT',
+            style: 'contact',
+            url: '/Contact',
+            active: false,
+        },
     ]);
 
     return (
