@@ -363,7 +363,10 @@ function Index() {
                         className={cx('picture-container')}
                     >
                         <img
-                            src={'img/home/main.png'}
+                            // src={'img/home/main.png'}
+                            src={
+                                'https://lh3.googleusercontent.com/ln4I6_PidT6jg0MPbmiVlHD4KPfIghl0szu00NanJuyzWNr0gel1eFxfpybZrM5j61LXoTnwMww7M2G5bJvo=w1920-h937-rw'
+                            }
                             className={cx('mainIMG')}
                         ></img>
                     </motion.div>
