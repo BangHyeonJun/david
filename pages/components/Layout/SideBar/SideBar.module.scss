@@ -268,6 +268,9 @@
                 .rss {
                     background-image: url('../../../../public/img/sidebar/rss.svg');
                 }
+                .notion {
+                    background-image: url('../../../../public/img/sidebar/notion.svg');
+                }
             }
         }
     }
@@ -405,6 +408,9 @@
                 }
                 &.rss {
                     background-image: url('../../../../public/img/sidebar/rss_phone.svg');
+                }
+                &.notion {
+                    background-image: url('../../../../public/img/sidebar/notion.svg');
                 }
             }
         }

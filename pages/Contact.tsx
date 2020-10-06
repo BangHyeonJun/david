@@ -66,43 +66,15 @@ function Contact() {
         setTimeout(() => {
             moveTitle();
         }, 5000);
-        return () => {};
-    }, []);
-
-    useEffect(() => {
-        setTimeout(() => {
-            moveTitle();
-        }, 5000);
         console.log('변함', titleArr);
     }, [titleArr]);
 
     return (
         <Layout title={'CONTACT'}>
-            <div className={cx('title-wrap')}>
-                {titleArr.map((title, idx) => (
-                    <div
-                        key={parseInt(idx.toString(), 16)}
-                        className={cx('title-box', { active: title.active })}
-                    >
-                        <span>{title.title[0]}</span>
-                        <span>{title.title[1]}</span>
-                    </div>
-                ))}
+            <div>
+                <span>Thank you for watching me</span>
+                <span>do you want to know about me more?</span>
             </div>
-            <div>please click this</div>
-            {/* <motion.div
-                animate={{ opacity: 1, backgroundColor: '#84B1ED' }}
-                initial={{ opacity: 1, backgroundColor: '#000000' }}
-                className={cx('wrap')}
-            >
-                <motion.div
-                    animate={{ x: 0, opacity: 1 }}
-                    initial={{ x: 60, opacity: 0 }}
-                    className={cx('cardWrap')}
-                >
-                    <h1>내 소개</h1>
-                </motion.div>
-            </motion.div> */}
         </Layout>
     );
 }

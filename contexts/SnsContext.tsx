@@ -63,14 +63,14 @@ export function SnsContextProvider({
             id: 'linkedin',
             title: 'LINKED IN',
             style: 'linkedin',
-            href:
-                'https://www.linkedin.com/in/%ED%98%84%EC%A4%80-%EB%B0%A9-38b9031ab/',
+            href: 'https://www.linkedin.com/in/hyeonjun-bang-38b9031ab/',
         },
         {
-            id: 'rss',
-            title: 'RSS',
-            style: 'rss',
-            href: '',
+            id: 'notion',
+            title: 'NOTION',
+            style: 'notion',
+            href:
+                'https://www.notion.so/366d4e3022314d2aa33c35d24c3b9cf1v4145ff77322d4bb18dbce40d60f88d5c/David-061e9007c86a43829e67c1bdd25df0d8',
         },
     ]);
 
